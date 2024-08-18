@@ -18,9 +18,9 @@ async function main() {
   const client = new Client({
     connectionString: process.env.DATABASE_URL, //postgresql://<roleName>:<rolePassword>@localhost:<databasePort>/<databaseName>
   });
-  client.connect();
-  client.query(SQL);
-  client.end();
+  await client.connect();
+  await client.query(SQL);
+  await client.end();
   console.log("done");
 }
 
